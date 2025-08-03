@@ -1,6 +1,9 @@
+@import url(../../../styles.scss);
+
+
 .floating-form-container {
   position: fixed;
-  top: -500px; // nascosto inizialmente
+  top: -500px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -25,6 +28,22 @@
       padding: 0.5rem;
       border-radius: 8px;
       border: 1px solid #ccc;
+    }
+
+
+    .divinput{
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .buttonx{
+      color:var(--main-color);
+      background: none;
+      border: none;
+      font-size: 30px;
+      font-weight: bold;
     }
 
     .btns {
