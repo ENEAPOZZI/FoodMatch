@@ -19,6 +19,7 @@ export class PaginationHomeComponent {
 
   cambiaPagina(page: number) {
     if (page >= 1 && page <= this.totalPages && page !== this.currentPage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       this.pageChanged.emit(page);
     }
   }

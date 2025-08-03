@@ -98,7 +98,7 @@ paginaSelezionata(page: number) {
     this.totalResults = response.totalResults;
 
     localStorage.setItem('lastPage', this.currentPage.toString());
-
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
