@@ -1,3 +1,4 @@
+@import url(../../../styles.scss);
 .card-container{
   display: flex;
   align-items: center;
@@ -7,7 +8,7 @@
 // btn per ricerca
 .btn-nuova-ricerca {
 
-  background-color: #f14b3a;
+  background-color:var(--main-color);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 12px;
