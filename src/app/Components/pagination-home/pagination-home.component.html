@@ -1,0 +1,17 @@
+<nav *ngIf="totalPages > 1" aria-label="Paginazione ricette">
+  <ul class="pagination custom-pagination">
+    <!-- Freccia indietro -->
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <button class="page-link" (click)="cambiaPagina(currentPage - 1)" [disabled]="currentPage === 1">
+        ‹
+      </button>
+    </li>
+
+    <!-- Freccia avanti -->
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <button class="page-link" (click)="cambiaPagina(currentPage + 1)" [disabled]="currentPage === totalPages">
+        ›
+      </button>
+    </li>
+  </ul>
+</nav>

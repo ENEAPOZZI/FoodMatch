@@ -1,0 +1,14 @@
+<nav class="custom-navbar">
+  <div class="container-fluid">
+    <a class="brand" routerLink="/">FoodMatch</a>
+
+    <button class="toggle-btn" (click)="menuOpen = !menuOpen">
+      ☰
+    </button>
+
+    <div class="links" [class.open]="menuOpen">
+      <a routerLink="/" routerLinkActive="active" (click)="menuOpen = false" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/preferiti" routerLinkActive="active" (click)="menuOpen = false">Favoritos</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+<div class="floating-form-container" [class.visible]="formVisible">
+  <form [formGroup]="form" (ngSubmit)="cerca()">
+    <div formArrayName="ingredienti">
+      <div *ngFor="let ingrediente of ingredienti.controls; let i = index">
+        <input [formControlName]="i" placeholder="Ingredient {{ i + 1 }}" />
+        <button type="button" (click)="rimuoviIngrediente(i)" *ngIf="ingredienti.length > 1">✖</button>
+      </div>
+    </div>
+
+    <div class="btns">
+      <button type="button" (click)="aggiungiIngrediente()" [disabled]="ingredienti.length >= 6">
+        ➕ Add
+      </button>
+
+      <button type="submit" [disabled]="ingredienti.length === 0">
+        🔍 Search
+      </button>
+    </div>
+  </form>
+</div>

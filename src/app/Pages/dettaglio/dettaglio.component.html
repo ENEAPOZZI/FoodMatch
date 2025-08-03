@@ -1,0 +1,55 @@
+<div *ngIf="isLoading" class="loading-container">
+  <p>⏳ Loading...</p>
+</div>
+
+<div *ngIf="!isLoading && recipeDetail" class="recipe-detail-page">
+
+  <h1 class="recipe-title">{{ recipeDetail.title }}</h1>
+
+  <div class="recipe-header">
+
+    <div class="imgContainer">
+      <img [src]="recipeDetail.image" alt="{{ recipeDetail.title }}" class="recipe-image" />
+    </div>
+
+    <div class="recipe-tags">
+      <span *ngIf="recipeDetail.vegetarian" class="tag vegetarian">Vegetarian</span>
+      <span *ngIf="recipeDetail.vegan" class="tag vegan">Vegan</span>
+      <span *ngIf="recipeDetail.glutenFree" class="tag gluten-free">Gluten-Free</span>
+      <span *ngIf="recipeDetail.cheap" class="tag cheap">Cheap</span>
+      <span *ngIf="recipeDetail.veryHealthy" class="tag healthy">Healthy</span>
+      <span *ngIf="recipeDetail.veryPopular" class="tag popular">Popular</span>
+    </div>
+  </div>
+
+<section class="ingredients-section">
+  <h2>Ingredients</h2>
+  <table class="ingredients-table">
+    <thead>
+      <tr>
+        <th>Ingredient</th>
+        <th>Amount</th>
+        <th>Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ing of recipeDetail.extendedIngredients">
+        <td>{{ ing.name }}</td>
+        <td>{{ ing.amount }}</td>
+        <td>{{ ing.unit }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="instructions-section" *ngIf="recipeDetail.analyzedInstructions?.length">
+  <h2>Instructions</h2>
+  <ol class="instructions-list">
+    <li *ngFor="let step of recipeDetail.analyzedInstructions[0].steps">
+      {{ step.step }}
+    </li>
+  </ol>
+</section>
+
+
+</div>

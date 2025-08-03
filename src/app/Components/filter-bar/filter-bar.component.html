@@ -1,0 +1,27 @@
+<div class="filter-bar d-flex justify-content-center gap-3">
+  <button
+    class="filter-btn"
+    [class.active]="selected === 'vegetarian'"
+    (click)="selezionaFiltro('vegetarian')"
+  >
+    🥦<span>Vegetarian</span>
+  </button>
+
+  <button
+    class="filter-btn"
+    [class.active]="selected === 'vegan'"
+    (click)="selezionaFiltro('vegan')"
+  >
+    🥕<span>Vegan</span>
+  </button>
+
+  <button
+    class="filter-btn"
+    [class.active]="selected === 'glutenFree'"
+    (click)="selezionaFiltro('glutenFree')"
+  >
+    🌾<span>Gluten Free</span>
+  </button>
+</div>
+
+<p class="filter-hint text-center mt-2">⚠️ You can only select one filter at a time.</p>

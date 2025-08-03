@@ -1,0 +1,63 @@
+.card-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// btn per ricerca
+.btn-nuova-ricerca {
+
+  background-color: #f14b3a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#f14b3a, 10%);
+  }
+}
+
+
+.barfilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.barfilter > :nth-last-child(1) {
+  justify-content: flex-end;
+}
+
+// Per barra filtri
+.barfilterchild {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .barfilter {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .barfilterchild {
+    justify-content: center !important;
+  }
+}

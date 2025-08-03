@@ -1,0 +1,44 @@
+
+<app-formfood *ngIf="formVisible" (onCerca)="cercaRicette($event)"></app-formfood>
+
+<app-pop-up-spiegazione *ngIf="!hasSearched"></app-pop-up-spiegazione>
+
+<app-error-mex *ngIf="hasSearched && isNoResults"></app-error-mex>
+
+
+<div class="barfilter">
+
+  <div class="barfilterchild">
+
+  </div>
+
+  <div class="barfilterchild">
+    <app-filter-bar *ngIf="hasSearched" (filtroCambiato)="applicaFiltroDiet($event)"></app-filter-bar>
+  </div>
+
+  <div class="barfilterchild">
+
+    <button
+      *ngIf="!formVisible"
+      (click)="riapriForm()"
+      class="btn-nuova-ricerca">
+      🔄 New research
+    </button>
+  </div>
+
+</div>
+
+
+<div *ngIf="!isError && !isNoResults && hasSearched" class="row g-3 ">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-container" *ngFor="let r of ricette">
+    <app-prinp-card [recipe]="r"></app-prinp-card>
+  </div>
+</div>
+
+
+
+<app-pagination-home
+  [totalResults]="totalResults"
+  [currentPage]="currentPage"
+  (pageChanged)="paginaSelezionata($event)">
+</app-pagination-home>

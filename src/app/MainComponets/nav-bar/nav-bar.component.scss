@@ -1,0 +1,104 @@
+@import url(../../../styles.scss);
+
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: var(--main-color);
+  padding: 0.75rem 1.5rem;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .toggle-btn {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+ .links {
+  display: flex;
+  gap: 1.5rem;
+  overflow: visible;
+
+  a {
+    position: relative;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background-color: #ffffff;
+      transition: width 0.3s ease;
+    }
+
+    &.active::after,
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #ecf0f1;
+    }
+  }
+}
+
+
+ @media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+  }
+
+  .links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    // Mostra sempre come flex, ma nascondi via height e opacity
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none; // Disabilita interazioni
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+
+    &.open {
+      max-height: 500px; // o quanto basta
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    a {
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+}

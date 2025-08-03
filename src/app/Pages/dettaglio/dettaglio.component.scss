@@ -1,0 +1,189 @@
+.recipe-detail-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.recipe-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+
+.imgContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .recipe-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+}
+
+.recipe-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  .tag {
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    &.vegetarian {
+      background-color: #dff0d8;
+      color: #3c763d;
+    }
+
+    &.vegan {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+
+    &.gluten-free {
+      background-color: #ffe0b2;
+      color: #ef6c00;
+    }
+
+    &.cheap {
+      background-color: #d0f0fd;
+      color: #0277bd;
+    }
+
+    &.healthy {
+      background-color: #e1f5fe;
+      color: #039be5;
+    }
+
+    &.popular {
+      background-color: #ffe082;
+      color: #f57c00;
+    }
+  }
+}
+
+.ingredients-section {
+  margin-top: 2rem;
+  padding: 1rem;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.ingredients-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+
+  tr:hover {
+    background-color: #fafafa;
+  }
+}
+
+.instructions-section {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: linear-gradient(to right, #fffdfc, #fefaf5);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    font-size: 2rem;
+    color: #d35400;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #f3c29e;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.instructions-list {
+  padding-left: 1.5rem;
+  list-style: decimal inside;
+  line-height: 1.7;
+
+  li {
+    margin-bottom: 1rem;
+    background: #fff6ef;
+    padding: 0.8rem 1rem;
+    border-left: 4px solid #f5b98e;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ffe5d2;
+    }
+  }
+}
+
+
+.ingredients-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+
+  th,
+  td {
+    text-align: left;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  thead th {
+    background-color: #fae5d3;
+    color: #7a3e05;
+    font-weight: bold;
+    border-bottom: 2px solid #f3c29e;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fffaf5;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #fdf3eb;
+  }
+
+  tbody tr:hover {
+    background-color: #ffe8d9;
+  }
+}

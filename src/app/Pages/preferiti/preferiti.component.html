@@ -1,0 +1,19 @@
+
+<h2 class="favourites-title">
+  ❤️ Your <span class="highlight">favourites</span>
+</h2>
+
+
+<div *ngIf="preferiti.length === 0" class="custom-alert">
+  <p>🍽️ There are no favourites</p>
+</div>
+
+<div *ngIf="preferiti.length > 0" class="row g-3">
+  <div
+    class="col-12 col-sm-6 col-md-4 col-lg-3 card-container"
+    *ngFor="let r of preferiti">
+    <app-prinp-card [recipe]="r"></app-prinp-card>
+  </div>
+</div>
+
+
